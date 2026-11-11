@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café de la Esquina</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Café de la Esquina</h1>
+        <div class="cabecera-botones">
+            <button id="btnTema">Modo Oscuro</button>
+            <a href="#carrito">Carrito (<span id="contadorCarrito">0</span>)</a>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#productos">Productos</a>
+        <a href="#favoritos">Favoritos</a>
+        <a href="#carrito">Carrito</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <main>
+        <section id="productos">
+            <h2>Nuestros Productos</h2>
+            <div class="controles">
+                <input type="text" id="buscador" placeholder="Buscar producto...">
+                <div class="filtros">
+                    <button class="btn-filtro activo" data-categoria="todos">Todos</button>
+                    <button class="btn-filtro" data-categoria="cafeteria">Cafetería</button>
+                    <button class="btn-filtro" data-categoria="pasteleria">Pastelería</button>
+                    <button class="btn-filtro" data-categoria="salado">Salado</button>
+                </div>
+            </div>
+            <div id="grillaProductos" class="grilla"></div>
+            <p id="sinResultados" class="oculto">No se encontraron productos.</p>
+        </section>
+
+        <section id="favoritos">
+            <h2>Mis Favoritos</h2>
+            <div id="grillaFavoritos" class="grilla"></div>
+            <p id="sinFavoritos">No tenés favoritos guardados.</p>
+        </section>
+
+        <section id="carrito">
+            <h2>Tu Carrito</h2>
+            <p id="carritoVacio">El carrito está vacío.</p>
+            <div id="listaCarrito"></div>
+            <div class="totales">
+                <p>Subtotal: <span id="subtotal">$0</span></p>
+                <p>IVA (21%): <span id="iva">$0</span></p>
+                <p><strong>Total: <span id="total">$0</span></strong></p>
+            </div>
+            <button id="btnVaciar">Vaciar Carrito</button>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto y Pedido</h2>
+            <form id="formulario">
+                <input type="text" id="nombre" placeholder="Nombre completo">
+                <span class="error" id="errorNombre"></span>
+
+                <input type="email" id="email" placeholder="Correo electrónico">
+                <span class="error" id="errorEmail"></span>
+
+                <input type="tel" id="telefono" placeholder="Teléfono">
+                <span class="error" id="errorTelefono"></span>
+
+                <input type="text" id="direccion" placeholder="Dirección de entrega">
+                <span class="error" id="errorDireccion"></span>
+
+                <button type="submit" id="btnEnviar">Confirmar Pedido</button>
+                <p id="msjExito" class="oculto">¡Pedido confirmado con éxito!</p>
+            </form>
+        </section>
+    </main>
+
+    <div id="toasts" class="toasts"></div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
